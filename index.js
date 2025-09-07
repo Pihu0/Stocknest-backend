@@ -187,6 +187,9 @@ app.use(cookieParser());
 
 //   res.send("Done!")
 // })
+app.get("/", (req, res) => {
+  res.send("Backend is working 🚀");
+});
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
