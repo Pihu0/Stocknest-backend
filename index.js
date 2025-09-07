@@ -273,14 +273,14 @@ app.post("/logout", (req, res) => {
 });
 
 
-mongoose
-  .connect(uri)
-  .then((res) => {
-    console.log("DB is connected!!");
+mongoose.connect(uri)
+  .then(() => {
+    console.log("✅ DB is connected!!");
   })
   .catch((err) => {
-    console.log("Error :" + err);
+    console.error("❌ MongoDB connection error:", err.message);
   });
+
 
 app.listen(PORT, () => {
   console.log("app is listening!");
